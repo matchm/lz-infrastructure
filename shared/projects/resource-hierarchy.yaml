@@ -12,8 +12,8 @@ spec:
       - lzaas-sec
       - lzaas-secrets
   tags:
-    costCenter: platform
-    platformAdmin: mati
+    cost-center: platform
+    platform-admin: mati
   defaultApis:
     - serviceusage.googleapis.com
   projectApis:
