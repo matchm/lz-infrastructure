@@ -1,0 +1,96 @@
+# # Landing-zone folder hierarchy, owned by Crossplane (Day-0 Terraform stays
+# # seed-only: crossplane-admin SA + its org roles).
+# #
+# # These are direct managed resources, not an XRD: folders are few, static and
+# # platform-owned. XRDs are for repeated tenant-facing APIs (see XProject).
+# #
+# # deletionProtection: false while the LZ is being built/experimented with on
+# # kind. FLIP TO true for prod - a folder delete with projects inside is
+# # exactly the accident this flag exists for.
+# apiVersion: cloudplatform.gcp.upbound.io/v1beta1
+# kind: Folder
+# metadata:
+#   name: core
+#   labels:
+#     app.kubernetes.io/name: crossplane
+#     app.kubernetes.io/component: infra
+#     app.kubernetes.io/part-of: platform
+# spec:
+#   forProvider:
+#     displayName: core
+#     parent: organizations/181428570708
+#     deletionProtection: false
+# ---
+# apiVersion: cloudplatform.gcp.upbound.io/v1beta1
+# kind: Folder
+# metadata:
+#   name: security
+#   labels:
+#     app.kubernetes.io/name: crossplane
+#     app.kubernetes.io/component: infra
+#     app.kubernetes.io/part-of: platform
+# spec:
+#   forProvider:
+#     displayName: security
+#     parent: organizations/181428570708
+#     deletionProtection: false
+# ---
+# apiVersion: cloudplatform.gcp.upbound.io/v1beta1
+# kind: Folder
+# metadata:
+#   name: platform
+#   labels:
+#     app.kubernetes.io/name: crossplane
+#     app.kubernetes.io/component: infra
+#     app.kubernetes.io/part-of: platform
+# spec:
+#   forProvider:
+#     displayName: platform
+#     parent: organizations/181428570708
+#     deletionProtection: false
+# ---
+# apiVersion: cloudplatform.gcp.upbound.io/v1beta1
+# kind: Folder
+# metadata:
+#   name: workloads
+#   labels:
+#     app.kubernetes.io/name: crossplane
+#     app.kubernetes.io/component: infra
+#     app.kubernetes.io/part-of: platform
+# spec:
+#   forProvider:
+#     displayName: workloads
+#     parent: organizations/181428570708
+#     deletionProtection: false
+# ---
+# # Environment subfolders reference the parent Folder MR by name (parentRef) -
+# # no copy-pasted numeric folder IDs.
+# apiVersion: cloudplatform.gcp.upbound.io/v1beta1
+# kind: Folder
+# metadata:
+#   name: workloads-prod
+#   labels:
+#     app.kubernetes.io/name: crossplane
+#     app.kubernetes.io/component: infra
+#     app.kubernetes.io/part-of: platform
+# spec:
+#   forProvider:
+#     displayName: prod
+#     parentRef:
+#       name: workloads
+#     deletionProtection: false
+# ---
+# apiVersion: cloudplatform.gcp.upbound.io/v1beta1
+# kind: Folder
+# metadata:
+#   name: workloads-non-prod
+#   labels:
+#     app.kubernetes.io/name: crossplane
+#     app.kubernetes.io/component: infra
+#     app.kubernetes.io/part-of: platform
+# spec:
+#   forProvider:
+#     displayName: non-prod
+#     parentRef:
+#       name: workloads
+#     deletionProtection: false
