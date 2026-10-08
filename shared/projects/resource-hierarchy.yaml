@@ -1,0 +1,24 @@
+apiVersion: platform.lzaas/v1alpha1
+kind: XResourceHierarchy
+metadata:
+  name: lzaas-dev-hierarchy
+spec:
+  billingAccount: "01F5C7-399448-A2BCF8"
+  parent: "organizations/181428570708"
+  resourceHierarchy:
+    platform:
+      - lzaas-plat
+    security:
+      - lzaas-sec
+      - lzaas-secrets
+  tags:
+    costCenter: platform
+    platformAdmin: mati
+  defaultApis:
+    - serviceusage.googleapis.com
+  projectApis:
+    lzaas-sec:
+      - secretmanager.googleapis.com
+    lzaas-secrets:
+      - secretmanager.googleapis.com
+      - kms.googleapis.com
