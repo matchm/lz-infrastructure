@@ -6,7 +6,7 @@ spec:
   appCode: test
   env: dev
   billingAccount: 01F5C7-399448-A2BCF8
-  folderName: 181428570708
+  # folderName: 181428570708
   labels:
     tenant: platform
     cost-center: platform
