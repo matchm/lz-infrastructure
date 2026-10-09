@@ -1,0 +1,29 @@
+apiVersion: governance.platform.lzaas/v1alpha1
+kind: XOrgPolicyBundle
+metadata:
+  name: lz-org-policies
+spec:
+  organizationId: "181428570708"
+  policies:
+    - constraint: "iam.disableServiceAccountKeyCreation"
+      enforce: true
+      exceptions:
+        - projectId: "lzaas-sec-9520"
+          enforce: false
+          reason: "Legacy automation requires static service account key (PLAT-104)"
+    - constraint: "compute.requireOsLogin"
+      enforce: true
+      exceptions:
+        - projectId: "lzaas-legacy-bastion"
+          enforce: false
+          reason: "Third-party network appliance requires direct SSH key injection"
+    - constraint: "compute.vmExternalIpAccess"
+      denyAll: true
+      exceptions:
+        - projectId: "lzaas-plat-9520"
+          allowAll: true
+          reason: "Public Envoy ingress proxy gateway requires external IP address"
+    - constraint: "compute.disableSerialPortAccess"
+      enforce: true
+    - constraint: "storage.uniformBucketLevelAccess"
+      enforce: true
