@@ -11,12 +11,6 @@ spec:
         - projectId: "lzaas-sec-9520"
           enforce: false
           reason: "Legacy automation requires static service account key (PLAT-104)"
-    - constraint: "compute.requireOsLogin"
-      enforce: true
-      exceptions:
-        - projectId: "lzaas-legacy-bastion"
-          enforce: false
-          reason: "Third-party network appliance requires direct SSH key injection"
     - constraint: "compute.vmExternalIpAccess"
       denyAll: true
       exceptions:
