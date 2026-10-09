@@ -3,8 +3,17 @@ kind: XResourceHierarchy
 metadata:
   name: lzaas-dev-hierarchy
 spec:
+  crossplane:
+    compositionUpdatePolicy: Manual
+    compositionRevisionSelector:
+      matchLabels:
+        platform.lzaas/channel: stable
   billingAccount: "01F5C7-399448-A2BCF8"
   parent: "organizations/181428570708"
+  owner: mati
+  costCenter: platform
+  dataClassification: internal
+  env: shrd
   resourceHierarchy:
     platform:
       - lzaas-plat
