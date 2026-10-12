@@ -8,11 +8,8 @@ spec:
     compositionRevisionSelector:
       matchLabels:
         platform.lzaas/channel: stable
-  billingAccount: "01F5C7-399448-A2BCF8"
-  folderName: platform
-  projectName: lzaas-net-hub
-  suffix: "9520"
-  networkName: lzaas-shared-vpc
+  projectId: "lzaas-net-hub-9520"
+  networkName: "lzaas-shared-vpc"
   routingMode: GLOBAL
   region: europe-west1
   enableCloudNat: true
@@ -21,6 +18,3 @@ spec:
   env: shrd
   costCenter: platform
   dataClassification: internal
-  tags:
-    component: shared-vpc
-    role: network-host
