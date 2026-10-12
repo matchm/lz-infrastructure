@@ -20,7 +20,10 @@ spec:
     security:
       - lzaas-sec
       - lzaas-secrets
-    applications:
+    tenants:
+      - lzaas-test-app
+    network:
+      - lzaas-net-hub
   tags:
     cost-center: platform
     platform-admin: mati
