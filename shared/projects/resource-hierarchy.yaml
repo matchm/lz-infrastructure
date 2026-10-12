@@ -18,23 +18,19 @@ spec:
     platform:
       - lzaas-plat
     security:
-      - lzaas-sec
       - lzaas-secrets
     tenants:
       - lzaas-test-app
     network:
       - lzaas-shd-vpc
-  tags:
-    cost-center: platform
-    platform-admin: mati
+  # tags:
+  #   cost-center: platform
+  #   platform-admin: mati
   defaultApis:
     - serviceusage.googleapis.com
   projectApis:
-    lzaas-sec:
-      - secretmanager.googleapis.com
     lzaas-secrets:
       - secretmanager.googleapis.com
-      - kms.googleapis.com
     lzaas-shd-vpc:
       - compute.googleapis.com
       - container.googleapis.com
