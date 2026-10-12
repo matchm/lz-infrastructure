@@ -11,7 +11,7 @@ spec:
       matchLabels:
         platform.lzaas/channel: stable
   projectId: lzaas-plat-9520
-  monthlyAmount: 1000
+  monthlyAmount: 1
 ---
 apiVersion: finops.platform.lzaas/v1alpha1
 kind: XBillingBudget
@@ -24,7 +24,7 @@ spec:
       matchLabels:
         platform.lzaas/channel: stable
   projectId: lzaas-net-hub-9520
-  monthlyAmount: 1000
+  monthlyAmount: 1
 ---
 apiVersion: finops.platform.lzaas/v1alpha1
 kind: XBillingBudget
@@ -37,4 +37,4 @@ spec:
       matchLabels:
         platform.lzaas/channel: stable
   projectId: lzaas-sec-9520
-  monthlyAmount: 500
+  monthlyAmount: 1
