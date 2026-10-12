@@ -8,10 +8,10 @@ spec:
     compositionRevisionSelector:
       matchLabels:
         platform.lzaas/channel: stable
-  projectId: "lzaas-net-hub-9520"
+  projectId: "lzaas-shd-vpc-9520"
   networkName: "lzaas-shared-vpc"
   routingMode: GLOBAL
-  region: europe-west1
+  region: europe-west2
   enableCloudNat: true
   enableBaselineFirewall: true
   owner: mati

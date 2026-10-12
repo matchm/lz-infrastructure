@@ -23,7 +23,7 @@ spec:
     tenants:
       - lzaas-test-app
     network:
-      - lzaas-net-hub
+      - lzaas-shd-vpc
   tags:
     cost-center: platform
     platform-admin: mati
