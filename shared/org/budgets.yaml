@@ -1,40 +1,40 @@
-# Platform infrastructure budgets with automated owner email threshold alerts.
-# Inherits billingAccount, owner, costCenter, env, and dataClassification from lzaas-config-global.
-apiVersion: finops.platform.lzaas/v1alpha1
-kind: XBillingBudget
-metadata:
-  name: budget-platform-hub
-spec:
-  crossplane:
-    compositionUpdatePolicy: Manual
-    compositionRevisionSelector:
-      matchLabels:
-        platform.lzaas/channel: stable
-  projectId: lzaas-plat-9520
-  monthlyAmount: 10
----
-apiVersion: finops.platform.lzaas/v1alpha1
-kind: XBillingBudget
-metadata:
-  name: budget-network-hub
-spec:
-  crossplane:
-    compositionUpdatePolicy: Manual
-    compositionRevisionSelector:
-      matchLabels:
-        platform.lzaas/channel: stable
-  projectId: lzaas-net-hub-9520
-  monthlyAmount: 10
----
-apiVersion: finops.platform.lzaas/v1alpha1
-kind: XBillingBudget
-metadata:
-  name: budget-security-core
-spec:
-  crossplane:
-    compositionUpdatePolicy: Manual
-    compositionRevisionSelector:
-      matchLabels:
-        platform.lzaas/channel: stable
-  projectId: lzaas-sec-9520
-  monthlyAmount: 10
+# # Platform infrastructure budgets with automated owner email threshold alerts.
+# # Inherits billingAccount, owner, costCenter, env, and dataClassification from lzaas-config-global.
+# apiVersion: finops.platform.lzaas/v1alpha1
+# kind: XBillingBudget
+# metadata:
+#   name: budget-platform-hub
+# spec:
+#   crossplane:
+#     compositionUpdatePolicy: Manual
+#     compositionRevisionSelector:
+#       matchLabels:
+#         platform.lzaas/channel: stable
+#   projectId: lzaas-plat-9520
+#   monthlyAmount: 10
+# ---
+# apiVersion: finops.platform.lzaas/v1alpha1
+# kind: XBillingBudget
+# metadata:
+#   name: budget-network-hub
+# spec:
+#   crossplane:
+#     compositionUpdatePolicy: Manual
+#     compositionRevisionSelector:
+#       matchLabels:
+#         platform.lzaas/channel: stable
+#   projectId: lzaas-net-hub-9520
+#   monthlyAmount: 10
+# ---
+# apiVersion: finops.platform.lzaas/v1alpha1
+# kind: XBillingBudget
+# metadata:
+#   name: budget-security-core
+# spec:
+#   crossplane:
+#     compositionUpdatePolicy: Manual
+#     compositionRevisionSelector:
+#       matchLabels:
+#         platform.lzaas/channel: stable
+#   projectId: lzaas-sec-9520
+#   monthlyAmount: 10
