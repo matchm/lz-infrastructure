@@ -1,0 +1,26 @@
+apiVersion: platform.lzaas/v1alpha1
+kind: XSharedVPC
+metadata:
+  name: lzaas-central-shared-vpc
+spec:
+  crossplane:
+    compositionUpdatePolicy: Manual
+    compositionRevisionSelector:
+      matchLabels:
+        platform.lzaas/channel: stable
+  billingAccount: "01F5C7-399448-A2BCF8"
+  folderName: platform
+  projectName: net-hub
+  suffix: "9520"
+  networkName: lzaas-shared-vpc
+  routingMode: GLOBAL
+  region: europe-west1
+  enableCloudNat: true
+  enableBaselineFirewall: true
+  owner: mati
+  env: shrd
+  costCenter: platform
+  dataClassification: internal
+  tags:
+    component: shared-vpc
+    role: network-host

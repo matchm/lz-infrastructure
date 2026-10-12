@@ -1,0 +1,31 @@
+apiVersion: platform.lzaas/v1alpha1
+kind: XTenantSubnet
+metadata:
+  name: dev-gke-subnet
+spec:
+  crossplane:
+    compositionUpdatePolicy: Manual
+    compositionRevisionSelector:
+      matchLabels:
+        platform.lzaas/channel: stable
+  subnetName: sb-dev-gke-europe-west1
+  region: europe-west1
+  ipCidrRange: "10.10.0.0/24"
+  hostProjectId: lzaas-shrd-net-hub-9520
+  networkName: lzaas-shared-vpc
+  serviceProjectId: lzaas-plat-9520
+  serviceProjectNumber: "887498207310"
+  gkeSecondaryRanges:
+    pods:
+      rangeName: gke-pods
+      ipCidrRange: "10.100.0.0/16"
+    services:
+      rangeName: gke-services
+      ipCidrRange: "10.101.0.0/20"
+  privateIpGoogleAccess: true
+  enableFlowLogs: false
+  attachServiceProject: true
+  owner: mati
+  env: dev
+  costCenter: platform
+  dataClassification: internal
