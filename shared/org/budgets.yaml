@@ -1,0 +1,58 @@
+# Platform infrastructure budgets with automated owner email threshold alerts.
+# Auto-derived budget ceilings by env (shrd = $1000/mo) or explicitly tuned per project.
+apiVersion: finops.platform.lzaas/v1alpha1
+kind: XBillingBudget
+metadata:
+  name: budget-platform-hub
+spec:
+  crossplane:
+    compositionUpdatePolicy: Manual
+    compositionRevisionSelector:
+      matchLabels:
+        platform.lzaas/channel: stable
+  billingAccount: "01F5C7-399448-A2BCF8"
+  projectId: lzaas-plat-9520
+  monthlyAmount: 1
+  currencyCode: USD
+  owner: mateusz@chmielewski.dev
+  costCenter: platform
+  dataClassification: internal
+  env: shrd
+---
+apiVersion: finops.platform.lzaas/v1alpha1
+kind: XBillingBudget
+metadata:
+  name: budget-network-hub
+spec:
+  crossplane:
+    compositionUpdatePolicy: Manual
+    compositionRevisionSelector:
+      matchLabels:
+        platform.lzaas/channel: stable
+  billingAccount: "01F5C7-399448-A2BCF8"
+  projectId: lzaas-net-hub-9520
+  monthlyAmount: 1
+  currencyCode: USD
+  owner: mateusz@chmielewski.dev
+  costCenter: platform
+  dataClassification: internal
+  env: shrd
+---
+apiVersion: finops.platform.lzaas/v1alpha1
+kind: XBillingBudget
+metadata:
+  name: budget-security-core
+spec:
+  crossplane:
+    compositionUpdatePolicy: Manual
+    compositionRevisionSelector:
+      matchLabels:
+        platform.lzaas/channel: stable
+  billingAccount: "01F5C7-399448-A2BCF8"
+  projectId: lzaas-sec-9520
+  monthlyAmount: 1
+  currencyCode: USD
+  owner: mateusz@chmielewski.dev
+  costCenter: platform
+  dataClassification: internal
+  env: shrd
