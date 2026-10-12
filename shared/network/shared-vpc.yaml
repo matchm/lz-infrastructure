@@ -10,7 +10,7 @@ spec:
         platform.lzaas/channel: stable
   billingAccount: "01F5C7-399448-A2BCF8"
   folderName: platform
-  projectName: lzaas-net-hub-9522
+  projectName: lzaas-net-hub
   suffix: "9520"
   networkName: lzaas-shared-vpc
   routingMode: GLOBAL
