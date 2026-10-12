@@ -35,7 +35,7 @@ spec:
     lzaas-secrets:
       - secretmanager.googleapis.com
       - kms.googleapis.com
-    lzaas-net-hub:
+    lzaas-shd-vpc:
       - compute.googleapis.com
       - container.googleapis.com
       - dns.googleapis.com
