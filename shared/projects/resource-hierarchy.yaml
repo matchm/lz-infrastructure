@@ -8,31 +8,14 @@ spec:
     compositionRevisionSelector:
       matchLabels:
         platform.lzaas/channel: stable
-  billingAccount: "01F5C7-399448-A2BCF8"
-  parent: "organizations/181428570708"
-  owner: mati
-  costCenter: platform
-  dataClassification: internal
-  env: shrd
   resourceHierarchy:
-    platform:
-      - lzaas-plat
     security:
       - lzaas-secrets
-    tenants:
-      - lzaas-test-app
-    network:
-      - lzaas-shd-vpc
-  # tags:
-  #   cost-center: platform
-  #   platform-admin: mati
+  # This is the org hierarchy claim: it owns the fleet-wide TagKey/TagValue
+  # taxonomy from platform-global's tagTaxonomy (exactly one claim may).
+  manageTagTaxonomy: true
   defaultApis:
     - serviceusage.googleapis.com
   projectApis:
     lzaas-secrets:
       - secretmanager.googleapis.com
-    lzaas-shd-vpc:
-      - compute.googleapis.com
-      - container.googleapis.com
-      - dns.googleapis.com
-      - servicenetworking.googleapis.com

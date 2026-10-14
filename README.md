@@ -54,5 +54,14 @@ and retries until it succeeds). Health checks make status truthful meanwhile.
 
 - `shared/org/seed-apis.yaml` — provider-critical APIs on the seed project.
 - `shared/org/org-policies.yaml` — org policy baseline (XOrgPolicyBundle claim).
+- `shared/org/config/` — EnvironmentConfig layers. `platform-global.yaml`
+  (Layer 1) carries the centralized **tag taxonomy** (`data.tagTaxonomy`):
+  the `XResourceHierarchy` claim in `shared/projects/` creates the org-wide
+  TagKeys/TagValues from it (it is the one claim with
+  `manageTagTaxonomy: true`) and binds every folder/project to
+  `environment`/`cost-center`/`data-classification` values from the label
+  contract. Values are a closed set — new cost centers/environments are a PR
+  to this file.
 - `shared/projects/resource-hierarchy.yaml` — the LZ folder/project skeleton
-  (XResourceHierarchy claim: folders + projects + per-project APIs).
+  (XResourceHierarchy claim: folders + projects + per-project APIs + org tag
+  taxonomy ownership).
