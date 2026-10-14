@@ -1,0 +1,21 @@
+# # Layer 2 (Environment): Platform team owned dev environment tier configuration.
+# # Overrides Layer 1 (Global) for resources deployed to dev.
+# apiVersion: apiextensions.crossplane.io/v1beta1
+# kind: EnvironmentConfig
+# metadata:
+#   name: env-dev
+#   labels:
+#     platform.lzaas/layer: environment
+#     platform.lzaas/environment: dev
+#     platform.lzaas/env: dev
+#     app.kubernetes.io/name: crossplane
+#     app.kubernetes.io/component: config
+#     app.kubernetes.io/part-of: platform
+# data:
+#   env: dev
+#   sharedVpcHostProjectId: "lzaas-shd-vpc-9520"
+#   sharedVpcNetworkName: "lzaas-shared-vpc"
+#   defaultOwner: "dev-team@chmielewski.dev"
+#   defaultCostCenter: "engineering-dev"
+#   defaultDataClassification: "internal"
+#   budgetLimit: 50

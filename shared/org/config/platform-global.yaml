@@ -1,0 +1,29 @@
+# Layer 1 (Global): Platform team owned global defaults for the entire landing zone fleet.
+apiVersion: apiextensions.crossplane.io/v1beta1
+kind: EnvironmentConfig
+metadata:
+  name: platform-global
+  labels:
+    platform.lzaas/layer: global
+    app.kubernetes.io/name: crossplane
+    app.kubernetes.io/component: config
+    app.kubernetes.io/part-of: platform
+data:
+  # GCP Organization & Billing
+  organizationId: "181428570708"
+  billingAccountId: "01F5C7-399448-A2BCF8"
+
+  # Core Networking & Regions
+  defaultRegion: "europe-west1"
+  sharedVpcHostProjectId: "lzaas-shd-vpc-9520"
+  sharedVpcNetworkName: "lzaas-shared-vpc"
+
+  # Platform Hub Projects
+  platformHubProjectId: "lzaas-plat-9520"
+  securityProjectId: "lzaas-sec-9520"
+
+  # Contract Metadata Defaults
+  defaultOwner: "mateusz@chmielewski.dev"
+  defaultCostCenter: "platform"
+  defaultDataClassification: "internal"
+  defaultEnv: "shrd"

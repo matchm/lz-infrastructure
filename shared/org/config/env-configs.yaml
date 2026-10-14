@@ -1,0 +1,60 @@
+# Layer 2 (Environment): Platform team owned environment tier configurations.
+# Later layers override Layer 1 (Global).
+apiVersion: apiextensions.crossplane.io/v1beta1
+kind: EnvironmentConfig
+metadata:
+  name: env-shrd
+  labels:
+    platform.lzaas/layer: environment
+    platform.lzaas/environment: shrd
+    platform.lzaas/env: shrd
+    app.kubernetes.io/name: crossplane
+    app.kubernetes.io/component: config
+    app.kubernetes.io/part-of: platform
+data:
+  env: shrd
+  sharedVpcHostProjectId: "lzaas-shd-vpc-9520"
+  sharedVpcNetworkName: "lzaas-shared-vpc"
+  platformHubProjectId: "lzaas-plat-9520"
+  securityProjectId: "lzaas-sec-9520"
+  defaultOwner: "mateusz@chmielewski.dev"
+  defaultCostCenter: "platform"
+  defaultDataClassification: "internal"
+# ---
+# apiVersion: apiextensions.crossplane.io/v1beta1
+# kind: EnvironmentConfig
+# metadata:
+#   name: env-stg
+#   labels:
+#     platform.lzaas/layer: environment
+#     platform.lzaas/environment: stg
+#     platform.lzaas/env: stg
+#     app.kubernetes.io/name: crossplane
+#     app.kubernetes.io/component: config
+#     app.kubernetes.io/part-of: platform
+# data:
+#   env: stg
+#   sharedVpcHostProjectId: "lzaas-shd-vpc-9520"
+#   sharedVpcNetworkName: "lzaas-shared-vpc"
+#   defaultCostCenter: "engineering-stg"
+#   defaultDataClassification: "internal"
+#   budgetLimit: 100
+# ---
+# apiVersion: apiextensions.crossplane.io/v1beta1
+# kind: EnvironmentConfig
+# metadata:
+#   name: env-prd
+#   labels:
+#     platform.lzaas/layer: environment
+#     platform.lzaas/environment: prd
+#     platform.lzaas/env: prd
+#     app.kubernetes.io/name: crossplane
+#     app.kubernetes.io/component: config
+#     app.kubernetes.io/part-of: platform
+# data:
+#   env: prd
+#   sharedVpcHostProjectId: "lzaas-shd-vpc-9520"
+#   sharedVpcNetworkName: "lzaas-shared-vpc"
+#   defaultCostCenter: "engineering-prd"
+#   defaultDataClassification: "restricted"
+#   budgetLimit: 500
