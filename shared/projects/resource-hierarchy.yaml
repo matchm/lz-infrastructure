@@ -3,9 +3,6 @@ kind: XResourceHierarchy
 metadata:
   name: lzaas-dev-hierarchy
   labels:
-    # selects env-shrd EnvironmentConfig (layer 2), which now provides the
-    # centralized environmentLabels/environmentTags contract values
-    # (environment: shrd, cost-center, data-classification)
     platform.lzaas/env: shrd
 spec:
   crossplane:
@@ -15,12 +12,10 @@ spec:
         platform.lzaas/channel: stable
   resourceHierarchy:
     security:
-      - lzaas-secrets
-  # This is the org hierarchy claim: it owns the fleet-wide TagKey/TagValue
-  # taxonomy from platform-global's tagTaxonomy (exactly one claim may).
+      - lzaas-sec
   manageTagTaxonomy: true
   defaultApis:
     - serviceusage.googleapis.com
   projectApis:
-    lzaas-secrets:
+    lzaas-sec:
       - secretmanager.googleapis.com
