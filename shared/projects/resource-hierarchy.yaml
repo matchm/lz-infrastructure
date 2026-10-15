@@ -2,6 +2,11 @@ apiVersion: platform.lzaas/v1alpha1
 kind: XResourceHierarchy
 metadata:
   name: lzaas-dev-hierarchy
+  labels:
+    # selects env-shrd EnvironmentConfig (layer 2), which now provides the
+    # centralized environmentLabels/environmentTags contract values
+    # (environment: shrd, cost-center, data-classification)
+    platform.lzaas/env: shrd
 spec:
   crossplane:
     compositionUpdatePolicy: Manual

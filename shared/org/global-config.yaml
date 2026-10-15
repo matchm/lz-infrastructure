@@ -9,34 +9,15 @@ metadata:
     app.kubernetes.io/component: config
     app.kubernetes.io/part-of: platform
 data:
-  # GCP Organization & Billing
   organizationId: "181428570708"
   billingAccountId: "01F5C7-399448-A2BCF8"
+  region: "europe-west2"
 
-  # Core Networking & Regions
-  defaultRegion: "europe-west1"
-  sharedVpcHostProjectId: "lzaas-shd-vpc-9520"
-  sharedVpcNetworkName: "lzaas-shared-vpc"
-
-  # Platform Hub Projects
-  platformHubProjectId: "lzaas-plat-9520"
-  securityProjectId: "lzaas-sec-9520"
-
-  # Contract Metadata Defaults
-  defaultOwner: "mateusz@chmielewski.dev"
-  defaultCostCenter: "platform"
-  defaultDataClassification: "internal"
-  defaultEnv: "shrd"
-
-  # Org-wide GCP Resource Manager tag taxonomy (YAML string - EnvironmentConfig
-  # data is string-only). XResourceHierarchy creates TagKeys/TagValues from this
-  # when spec.manageTagTaxonomy=true (exactly one claim fleet-wide), and every
-  # hierarchy claim binds its folders/projects to these values (environment,
-  # cost-center, data-classification come from the platform label contract).
-  # Values are a CLOSED set: binding a value not listed here is skipped -
-  # adding a cost center or environment is a PR to this file.
-  # Keep tags for IAM conditions / org-policy targeting / cost allocation;
-  # free-form metadata belongs in GCP labels (spec.tags).
+  globalLabels: |
+    platform.lzaas/managed-by: crossplane
+  globalTags: |
+    managed-by: crossplane
+    platform: lz
   tagTaxonomy: |
     environment:
       description: Deployment environment - IAM conditions and org-policy targeting.
