@@ -13,13 +13,6 @@ metadata:
     app.kubernetes.io/part-of: platform
 data:
   env: shrd
-  sharedVpcHostProjectId: "lzaas-shd-vpc-9520"
-  sharedVpcNetworkName: "lzaas-shared-vpc"
-  platformHubProjectId: "lzaas-plat-9520"
-  securityProjectId: "lzaas-sec-9520"
-  defaultOwner: "mateusz@chmielewski.dev"
-  defaultCostCenter: "platform"
-  defaultDataClassification: "internal"
   # Layer-2 label/tag values (precedence: global > environment > tenant > claim).
   # Keys matching tagTaxonomy shortNames (see platform-global) also create
   # TagBindings on folders/projects, replacing what the composition template
