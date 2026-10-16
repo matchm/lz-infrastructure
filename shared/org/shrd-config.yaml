@@ -1,5 +1,3 @@
-# Layer 2 (Environment): Platform team owned environment tier configurations.
-# Later layers override Layer 1 (Global).
 apiVersion: apiextensions.crossplane.io/v1beta1
 kind: EnvironmentConfig
 metadata:
@@ -7,18 +5,14 @@ metadata:
   labels:
     platform.lzaas/layer: environment
     platform.lzaas/environment: shrd
-    platform.lzaas/env: shrd
     app.kubernetes.io/name: crossplane
     app.kubernetes.io/component: config
     app.kubernetes.io/part-of: platform
 data:
   env: shrd
-  # Layer-2 label/tag values (precedence: global > environment > tenant > claim).
-  # Keys matching tagTaxonomy shortNames (see platform-global) also create
-  # TagBindings on folders/projects, replacing what the composition template
-  # used to derive from claim spec fields.
   environmentLabels: |
     platform.lzaas/env: shrd
+    platform.lzaas/tenant: platform
   environmentTags: |
     environment: shrd
     cost-center: platform

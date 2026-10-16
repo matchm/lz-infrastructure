@@ -1,0 +1,18 @@
+apiVersion: platform.lzaas/v1alpha1
+kind: XGroup
+metadata:
+  name: org-groups
+  labels:
+    platform.lzaas/tenant: platform
+  kind: platform
+  app: org
+  env: shrd
+  roles:
+    - admins
+  roleConfig:
+    admins:
+      membershipRole: ADMIN
+      displayName: Platform admins
+      description: Platform Admins
+      members:
+        - mateusz@chmielewski.dev
