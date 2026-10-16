@@ -12,12 +12,15 @@ data:
   organizationId: "181428570708"
   billingAccountId: "01F5C7-399448-A2BCF8"
   region: "europe-west2"
+  defaultGroupDomain: "chmielewski.dev"
+  cloudIdentityCustomerId: C04ft3sq7
 
   globalLabels: |
     platform.lzaas/managed-by: crossplane
   globalTags: |
     managed-by: crossplane
     platform: lz
+
   tagTaxonomy: |
     environment:
       description: Deployment environment - IAM conditions and org-policy targeting.
