@@ -4,6 +4,7 @@ metadata:
   name: org-groups
   labels:
     platform.lzaas/tenant: platform
+spec:
   kind: platform
   app: org
   env: shrd
@@ -11,7 +12,7 @@ metadata:
     - admins
   roleConfig:
     admins:
-      membershipRole: ADMIN
+      membershipRole: OWNER
       displayName: Platform admins
       description: Platform Admins
       members:
