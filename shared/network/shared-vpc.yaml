@@ -8,16 +8,14 @@ metadata:
     platform.lzaas/env: shrd
 spec:
   crossplane:
-    compositionUpdatePolicy: Manual
+    compositionUpdatePolicy: Automatic
     compositionRevisionSelector:
       matchLabels:
         platform.lzaas/channel: stable
-    # Pinned explicitly: this claim was stuck on revision 1, whose template still
-    # implements the legacy owner/cost-center/data-classification label contract
-    # that the migrated XRD deleted. Bump on each promotion.
-    compositionRevisionRef:
-      name: xsharedvpc-pipeline-99f7e21
-  projectId: "lzaas-shd-vpc-9520"
+  # Resolved through the tenant label: lzaas-sec is the project this tenant's
+  # XResourceHierarchy created (<name>-<suffix> is matched by prefix).
+  projectRef:
+    name: lzaas-sec
   networkName: "lzaas-shared-vpc"
   routingMode: GLOBAL
   region: europe-west2
