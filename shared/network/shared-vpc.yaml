@@ -2,19 +2,24 @@ apiVersion: platform.lzaas/v1alpha1
 kind: XSharedVPC
 metadata:
   name: lzaas-central-shared-vpc
+  labels:
+    # get-project matches the tenant's project sources on this label
+    platform.lzaas/tenant: platform
+    platform.lzaas/env: shrd
 spec:
   crossplane:
     compositionUpdatePolicy: Manual
     compositionRevisionSelector:
       matchLabels:
         platform.lzaas/channel: stable
+    # Pinned explicitly: this claim was stuck on revision 1, whose template still
+    # implements the legacy owner/cost-center/data-classification label contract
+    # that the migrated XRD deleted. Bump on each promotion.
+    compositionRevisionRef:
+      name: xsharedvpc-pipeline-99f7e21
   projectId: "lzaas-shd-vpc-9520"
   networkName: "lzaas-shared-vpc"
   routingMode: GLOBAL
   region: europe-west2
   enableCloudNat: true
   enableBaselineFirewall: true
-  owner: mati
-  env: shrd
-  costCenter: platform
-  dataClassification: internal
