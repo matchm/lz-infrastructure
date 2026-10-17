@@ -4,6 +4,7 @@ metadata:
   name: lzaas-dev-hierarchy
   labels:
     platform.lzaas/env: shrd
+    platform.lzaas/tenant: platform
 spec:
   crossplane:
     compositionUpdatePolicy: Manual
