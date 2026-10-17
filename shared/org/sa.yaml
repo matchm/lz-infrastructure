@@ -1,0 +1,21 @@
+apiVersion: platform.lzaas/v1alpha1
+kind: XServiceAccount
+metadata:
+  name: l2-plat-sa
+  labels:
+    platform.lzaas/tenant: platform
+spec:
+  accountName: l2-plat-sa
+  projectRef:
+    name: lzaas-sec
+  displayName: L2 Service Account
+  description: Running L2 opperations
+  env: shrd
+  roles:
+    - roles/storage.objectViewer
+    - roles/secretmanager.secretAccessor
+  # workloadIdentity:
+  #   namespace: prj-billing-api-app
+  #   name: billing-api-worker
+  labels:
+    team: platform
