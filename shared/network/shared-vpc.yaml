@@ -1,23 +1,23 @@
-apiVersion: platform.lzaas/v1alpha1
-kind: XSharedVPC
-metadata:
-  name: lzaas-central-shared-vpc
-  labels:
-    # get-project matches the tenant's project sources on this label
-    platform.lzaas/tenant: platform
-    platform.lzaas/env: shrd
-spec:
-  crossplane:
-    compositionUpdatePolicy: Automatic
-    compositionRevisionSelector:
-      matchLabels:
-        platform.lzaas/channel: stable
-  # Resolved through the tenant label: lzaas-sec is the project this tenant's
-  # XResourceHierarchy created (<name>-<suffix> is matched by prefix).
-  projectRef:
-    name: lzaas-sec
-  networkName: "lzaas-shared-vpc"
-  routingMode: GLOBAL
-  region: europe-west2
-  enableCloudNat: true
-  enableBaselineFirewall: true
+# apiVersion: platform.lzaas/v1alpha1
+# kind: XSharedVPC
+# metadata:
+#   name: lzaas-central-shared-vpc
+#   labels:
+#     # get-project matches the tenant's project sources on this label
+#     platform.lzaas/tenant: platform
+#     platform.lzaas/env: shrd
+# spec:
+#   crossplane:
+#     compositionUpdatePolicy: Automatic
+#     compositionRevisionSelector:
+#       matchLabels:
+#         platform.lzaas/channel: stable
+#   # Resolved through the tenant label: lzaas-sec is the project this tenant's
+#   # XResourceHierarchy created (<name>-<suffix> is matched by prefix).
+#   projectRef:
+#     name: lzaas-sec
+#   networkName: "lzaas-shared-vpc"
+#   routingMode: GLOBAL
+#   region: europe-west2
+#   enableCloudNat: true
+#   enableBaselineFirewall: true
