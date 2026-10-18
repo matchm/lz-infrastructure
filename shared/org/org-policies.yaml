@@ -15,7 +15,8 @@ spec:
     #   exceptions:
     #     - projectId: "lzaas-plat-9520"
     #       allowAll: true
-    #       reason: "Public Envoy ingress proxy gateway requires external IP address"
+    #       reason: "The management cluster's NAT gateway and any public load
+    #                balancer frontend need an external IP address"
     - constraint: "compute.disableSerialPortAccess"
       enforce: true
     - constraint: "storage.uniformBucketLevelAccess"
