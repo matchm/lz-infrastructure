@@ -1,16 +1,16 @@
-apiVersion: platform.lzaas/v1alpha1
-kind: XResourceHierarchy
-metadata:
-  name: lzaas-dev-hierarchy
-  labels:
-    platform.lzaas/env: shrd
-    platform.lzaas/tenant: platform
-spec:
-  crossplane:
-    compositionUpdatePolicy: Manual
-    compositionRevisionSelector:
-      matchLabels:
-        platform.lzaas/channel: stable
+# apiVersion: platform.lzaas/v1alpha1
+# kind: XResourceHierarchy
+# metadata:
+#   name: lzaas-dev-hierarchy
+#   labels:
+#     platform.lzaas/env: shrd
+#     platform.lzaas/tenant: platform
+# spec:
+#   crossplane:
+#     compositionUpdatePolicy: Manual
+#     compositionRevisionSelector:
+#       matchLabels:
+#         platform.lzaas/channel: stable
   # resourceHierarchy:
   #   security:
   #     - lzaas-sec
