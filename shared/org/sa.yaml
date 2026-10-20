@@ -15,8 +15,17 @@ spec:
   roles:
     - roles/storage.objectViewer
     - roles/secretmanager.secretAccessor
+  # Direct workload-identity bindings (no GSA impersonation, no annotation on
+  # the KSA - the (namespace, name) pair is the join). Defaults: all spec.roles
+  # on <this project>.svc.id.goog; roles/workloadPool/poolProjectNumber only to
+  # narrow or point at a cluster in another project.
   # workloadIdentity:
-  #   namespace: prj-billing-api-app
-  #   name: billing-api-worker
+  #   - namespace: prj-billing-api-app
+  #     name: billing-api-worker
+  #   - namespace: billing-maintenance
+  #     name: reporting-cronjob
+  #     roles: [roles/storage.objectViewer]
+  #     workloadPool: some-other-project.svc.id.goog
+  #     poolProjectNumber: "123456789012"
   labels:
     team: platform

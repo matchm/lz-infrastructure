@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/part-of: platform
 data:
   organizationId: "181428570708"
-  billingAccountId: "00101C1-21DAF6-8F1836"
+  billingAccountId: "0101C1-21DAF6-8F1836"
   region: "europe-west1"
   defaultGroupDomain: "chmielewski.dev"
   cloudIdentityCustomerId: C04ft3sq7
