@@ -20,3 +20,4 @@ spec:
   projectApis:
     lzaas-sec:
       - secretmanager.googleapis.com
+      - compute.googleapis.com
