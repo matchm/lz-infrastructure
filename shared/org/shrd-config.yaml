@@ -13,10 +13,10 @@ data:
   environmentLabels: |
     platform.lzaas/env: shrd
     platform.lzaas/tenant: platform
-  environmentTags: |
-    environment: shrd
-    cost-center: platform
-    data-classification: internal
+  # environmentTags: |
+  #   environment: shrd
+  #   cost-center: platform
+  #   data-classification: internal
 # ---
 # apiVersion: apiextensions.crossplane.io/v1beta1
 # kind: EnvironmentConfig

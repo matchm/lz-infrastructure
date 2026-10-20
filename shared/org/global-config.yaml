@@ -17,9 +17,9 @@ data:
 
   globalLabels: |
     platform.lzaas/managed-by: crossplane
-  globalTags: |
-    managed-by: crossplane
-    platform: lz
+  # globalTags: |
+  #   managed-by: crossplane
+  #   platform: lz
 
   tagTaxonomy: |
     environment:
