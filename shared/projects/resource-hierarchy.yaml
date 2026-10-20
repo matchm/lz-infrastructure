@@ -11,13 +11,13 @@ spec:
     compositionRevisionSelector:
       matchLabels:
         platform.lzaas/channel: stable
-  resourceHierarchy:
-    security:
-      - lzaas-sec
-  manageTagTaxonomy: true
-  defaultApis:
-    - serviceusage.googleapis.com
-  projectApis:
-    lzaas-sec:
-      - secretmanager.googleapis.com
-      - compute.googleapis.com
+  # resourceHierarchy:
+  #   security:
+  #     - lzaas-sec
+  # manageTagTaxonomy: true
+  # defaultApis:
+  #   - serviceusage.googleapis.com
+  # projectApis:
+  #   lzaas-sec:
+  #     - secretmanager.googleapis.com
+  #     - compute.googleapis.com

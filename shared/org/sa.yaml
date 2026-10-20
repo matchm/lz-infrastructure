@@ -1,20 +1,20 @@
-apiVersion: platform.lzaas/v1alpha1
-kind: XServiceAccount
-metadata:
-  name: l2-plat-sa
-  labels:
-    platform.lzaas/tenant: platform
-    # selects the env-shrd EnvironmentConfig; XServiceAccount has no spec.env
-    platform.lzaas/env: shrd
-spec:
-  accountName: l2-plat-sa
-  projectRef:
-    name: lzaas-sec
-  displayName: L2 Service Account
-  description: Running L2 opperations
-  roles:
-    - roles/storage.objectViewer
-    - roles/secretmanager.secretAccessor
+# apiVersion: platform.lzaas/v1alpha1
+# kind: XServiceAccount
+# metadata:
+#   name: l2-plat-sa
+#   labels:
+#     platform.lzaas/tenant: platform
+#     # selects the env-shrd EnvironmentConfig; XServiceAccount has no spec.env
+#     platform.lzaas/env: shrd
+# spec:
+#   accountName: l2-plat-sa
+#   projectRef:
+#     name: lzaas-sec
+#   displayName: L2 Service Account
+#   description: Running L2 opperations
+#   roles:
+#     - roles/storage.objectViewer
+#     - roles/secretmanager.secretAccessor
   # Direct workload-identity bindings (no GSA impersonation, no annotation on
   # the KSA - the (namespace, name) pair is the join). Defaults: all spec.roles
   # on <this project>.svc.id.goog; roles/workloadPool/poolProjectNumber only to
