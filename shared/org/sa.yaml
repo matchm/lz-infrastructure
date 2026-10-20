@@ -27,5 +27,5 @@
   #     roles: [roles/storage.objectViewer]
   #     workloadPool: some-other-project.svc.id.goog
   #     poolProjectNumber: "123456789012"
-  labels:
-    team: platform
+  # labels:
+  #   team: platform
